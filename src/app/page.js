@@ -1,14 +1,14 @@
 "use client"
 import { useState, useRef } from "react";
 import Todo from "./todo"
-import todo from "./todo";
 
 
 export default function Home() {
 
   const [todos, setTodos] = useState(["Träna", "Skriva uppsats"]);
 
-  const inputElement = useRef();
+  const titleInput = useRef();
+  const gradeInput = useRef();
   const createTodo = () => {
 
     const newTodo = inputElement.current.value;
@@ -26,10 +26,13 @@ export default function Home() {
   }
   return (
     <article>
-      <h1> Todo list! </h1>
-      <input ref={inputElement}/>
+      <h1> Filmlista </h1>
+      <h2> Film </h2>
+      <input ref={titleInput}/>
+      <h2> betyg </h2>
+      <input ref={gradeInput}/>
       <button onClick={createTodo}> Spara! </button>
-      <h2> Todos </h2>
+      <h2> Filmer </h2>
       <button onClick={sortByTitle}>Sortera</button>
       <ul>
         {todos.map((todo, i) => {
