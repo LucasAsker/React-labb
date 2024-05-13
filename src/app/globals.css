@@ -4,3 +4,16 @@ body {
   justify-content: center;
   text-align: center;
 }
+img {
+  width: 25px;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: flex;
+  text-align: start;
+}
+button {
+  display: block;
+}

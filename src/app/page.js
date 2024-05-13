@@ -37,7 +37,7 @@ export default function Home() {
   const renderStars = (grade) => {
     const stars = [];
     for (let i = 0; i < grade; i++) {
-      stars.push(<img key={i} src={starImage} alt="star" />);
+      stars.push(<img key={i} src={starImage.src} alt="star" />);
     }
     return stars;
   };
