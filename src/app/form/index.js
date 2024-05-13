@@ -38,7 +38,7 @@ function TextControlsExample({ addMovie }) {
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Film namn</Form.Label>
-        <Form.Control type="text" placeholder="Star Wars" ref={titleInput} />
+        <Form.Control type="text" placeholder="Ange film..." ref={titleInput} />
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Välj betyg</Form.Label>

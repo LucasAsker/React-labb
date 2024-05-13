@@ -37,6 +37,7 @@ export default function Home() {
 
   return (
     <article>
+      <h2> Filmlista </h2>
       <TextControlsExample addMovie={addMovie} />
       <hr />
       <h2>Filmer</h2>
