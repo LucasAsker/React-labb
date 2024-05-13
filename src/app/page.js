@@ -1,8 +1,9 @@
-"use client"
-import React, { useState, useRef } from "react";
+'use client'
+import React, { useState } from "react";
 import Movie from "./movie";
-import "./globals.css"; // Assuming this file contains global styles
 import starImage from "./images/star.png";
+import Button from "./button";
+import TextControlsExample from "./form"; 
 
 export default function Home() {
   const [movies, setMovies] = useState([
@@ -10,15 +11,7 @@ export default function Home() {
     { title: "Fight club", grade: 2 }
   ]);
 
-  const titleInput = useRef();
-  const gradeInput = useRef();
-
-  const addMovie = () => {
-    const newMovie = {
-      title: titleInput.current.value,
-      grade: parseInt(gradeInput.current.value)
-    };
-
+  const addMovie = (newMovie) => {
     setMovies([...movies, newMovie]);
   };
 
@@ -44,28 +37,16 @@ export default function Home() {
 
   return (
     <article>
-      <h1>Filmlista</h1>
-      <h3>Lägg till film</h3>
-      <input ref={titleInput} />
-      <h3>Lägg till betyg</h3>
-      <select ref={gradeInput}>
-        <option selected value="0">Välj betyg...</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button onClick={addMovie}>Spara!</button>
+      <TextControlsExample addMovie={addMovie} />
       <hr />
       <h2>Filmer</h2>
-      <button onClick={sortByTitle}>Sortera</button>
+      <Button variant={"primary"} onClick={sortByTitle}>Sortera</Button>
       <ul>
         {movies.map((movie, i) => (
           <Movie
             key={i}
             title={movie.title}
-            grade={renderStars(movie.grade)} // Rendering stars instead of grade
+            grade={renderStars(movie.grade)} 
             index={i}
             deleteMovie={deleteMovie}
           />
